@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Lanchonete.Models.Lanche>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lanches</h2>
+
+<p>
+    @Html.ActionLink("CRIAR NOVO LANCHE", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Categoria.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Preco)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Categoria.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Preco)
+        </td>
+        <td>
+           
+            @Html.ActionLink("EDITAR", "Edit", new { id=item.LancheID }) |
+            @Html.ActionLink("DETALHES", "Details", new { id=item.LancheID }) |
+            @Html.ActionLink("DELETAR", "Delete", new { id=item.LancheID })
+        </td>
+    </tr>
+}
+
+</table>

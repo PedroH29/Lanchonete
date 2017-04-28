@@ -1,0 +1,35 @@
+﻿@model Lanchonete.Models.Categoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>DETALHES DE CATEGORIAS</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+    </dl>
+</div>
+<div class="form-actions no-color">
+    <input type="submit" value="EDITAR" class="btn btn-default" /> |
+    <input type="submit" value="VOLTAR" class="btn btn-default" />
+</div>
+

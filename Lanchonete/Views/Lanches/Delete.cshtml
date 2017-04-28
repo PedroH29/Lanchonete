@@ -1,0 +1,56 @@
+﻿@model Lanchonete.Models.Lanche
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>DELETAR</h2>
+
+<h3>VOCÊ TEM CERTEZAR QUE DESEJA DELETAR ESTE ITEM?</h3>
+<div>
+    <h4>Lanche</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="DELETAR" class="btn btn-default" /> |
+            <input type="submit" value="VOLTAR" class="btn btn-default" /> 
+        </div>
+    }
+</div>
